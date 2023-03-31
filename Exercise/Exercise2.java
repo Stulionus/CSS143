@@ -15,5 +15,19 @@ public class Exercise2 {
         Additional improvement: make your code run as fast as possible
          */
         //TODO: add your code
+
+        int[] list= {1,2,3,4,65,74,256,-256,0,16};
+        for (int i :list) {
+            //if(isPowerOfTwo(list[i])){
+
+            //}else {
+                System.out.println("No");
+            }
+        }
+
     }
-}
+    //public static boolean isPowerOfTwo(int x){
+    //    do{
+
+    //    }while();
+    //}
