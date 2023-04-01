@@ -1,5 +1,5 @@
 package Exercise;
-
+import java.lang.Math.*;
 public class Exercise2 {
     public static void main(String[] args) {
         exercise2();
@@ -17,17 +17,19 @@ public class Exercise2 {
         //TODO: add your code
 
         int[] list= {1,2,3,4,65,74,256,-256,0,16};
-        for (int i :list) {
-            //if(isPowerOfTwo(list[i])){
-
-            //}else {
-                System.out.println("No");
+        int test;
+        for (int i = 0; i < list.length; i++) {
+            test = 2;
+            while(test < list[i]){
+                test = (int) Math.pow(test,2);
             }
+               if (test == list[i]){
+                   System.out.println("Yes");
+               } else {
+                   System.out.println("No");
+               }
+            }
+
         }
 
     }
-    //public static boolean isPowerOfTwo(int x){
-    //    do{
-
-    //    }while();
-    //}
