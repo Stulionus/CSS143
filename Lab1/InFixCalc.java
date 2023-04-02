@@ -1,6 +1,8 @@
 package Lab1;
+import javax.swing.text.html.parser.Parser;
 import java.util.Scanner;
 import java.util.*;
+import java.util.StringTokenizer;
 /*
  * InFixCalc, V0.0 (concept borrowed from Carol Zander's Infix Calculator)
  * Exercise author: Rob Nash
@@ -26,6 +28,7 @@ public class InFixCalc {
         String input ="1 * -3 + 6 / 3";
         //String input ="5";
         //String input ="-5";
+
         int answer = calculate(input);
         System.out.println("Answer is " + answer);
     }
@@ -39,14 +42,46 @@ public class InFixCalc {
         /*todo: your name and code goes here: Maxim Capcanari*/
         /*You need a Scanner(or StringTokenizer) to get tokens
           *Then you need a loop, and switch inside that loop*/
-        StringTokenizer st = new StringTokenizer(input, "");
+        StringTokenizer st = new StringTokenizer(input, " ");
             lhs = Integer.parseInt(st.nextToken());
-            operation = (char) st.nextElement();
+            operation = st.nextToken().charAt(0);
             rhs = Integer.parseInt(st.nextToken());
 
-        System.out.println("First number:" + lhs);
-        System.out.println("Operation:" + operation);
-        System.out.println("Last Number:" + rhs);
+            while (st.hasMoreTokens()){
+                switch (operation){
+                    case '+':
+                        lhs = lhs + rhs;
+                        break;
+                    case '-':
+                        lhs = lhs - rhs;
+                        break;
+                    case '*':
+                        lhs = lhs * rhs;
+                        break;
+                    case '/':
+                        lhs = lhs / rhs;
+                        break;
+                }
+                operation = st.nextToken().charAt(0);
+                rhs = Integer.parseInt(st.nextToken());
+            }
+
+            // Here I realized that even after it reaches the end of the "input" string it still needs to perform the operation one more time
+        switch (operation){
+            case '+':
+                lhs = lhs + rhs;
+                break;
+            case '-':
+                lhs = lhs - rhs;
+                break;
+            case '*':
+                lhs = lhs * rhs;
+                break;
+            case '/':
+                lhs = lhs / rhs;
+                break;
+        }
+
         return lhs;
     }
 }
