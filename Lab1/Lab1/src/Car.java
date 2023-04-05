@@ -22,6 +22,7 @@ public class Car {
     }
 
 
+
     public static void main(String[] args) {
         Car cr1 = new Car("Ford", "Focus", 15023);
         Car cr2 = new Car("Honda", "Accord", 47923);
@@ -38,5 +39,23 @@ public class Car {
         System.out.println("Model: " + cr2.getModel());
         System.out.println("Mileage: " + cr2.getMileage());
 
+
+        // This (the Implicit Parameter) part of the lab
+
+        Car cr3 = new Car ("Toyota","RAV4",5632);
+        System.out.println(cr3.toString());
+        cr3.getAddress();
+        /*
+        The address is the same because when we call it with this. and when we call it through cr3.toString()
+        we refer to the same object that is stored in the same place in memory therefore the address is the same/
+         */
     }
+
+
+    public void getAddress(){
+        System.out.println(this.toString());
+    }
+
+
+
 }

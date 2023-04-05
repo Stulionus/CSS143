@@ -12,7 +12,7 @@ public class Rectangle /* extends Shape */ {
 	
 	
 	//data items here
-	int x,y,x2,y2;  //what should these be? public? private?
+	int x,y,x2,y2;  //what should these be? public? private? These are four class-level variables
 	
 	public Rectangle() {  //first, notice there are no static methods in this class...
 		//this constructor is called if we don't pass any data when we build a rectangle
@@ -20,16 +20,16 @@ public class Rectangle /* extends Shape */ {
 	
 	public Rectangle(int newX, int newY) {
 		//This constructor allows you to build a rectangle with only one coordinate pair
-		x = newX;
-		y = newY;
+		x = newX; // Local Variable
+		y = newY; // Local Variable
 	}
 	
 	public Rectangle(int newX, int newY, int newX2, int newY2) {
 		//with this constructor, you can fully initialize a Rectangle
-		x = newX;
-		y = newY;
-		x2 = newX2;
-		y2 = newY2;   //new Y2K!
+		x = newX; // Local Variable
+		y = newY; // Local Variable
+		x2 = newX2; // Local Variable
+		y2 = newY2;   //new Y2K! // Local Variable
 	}
 	
 	public void setXY(int newX, int newY) {
